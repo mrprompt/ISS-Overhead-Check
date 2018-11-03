@@ -3,7 +3,7 @@
 Check International Space Station Pass Times Over 
 Location using ESP8266 and [MicroPython](https://micropython.org/).
 
-This project is created to run on my Nodemcu Wifi Esp8266 with Oled Display 128x32, can't test in others devices.
+This project was created to run on my Nodemcu Wifi Esp8266 with Oled Display 128x32, I could't test on other devices.
 
 ![Nodemcu Wifi Esp8266](assets/IMG_20181102_215430030.jpg)
 ![Nodemcu Wifi Esp8266](assets/IMG_20181102_215435123.jpg)
