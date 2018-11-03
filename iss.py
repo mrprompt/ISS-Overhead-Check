@@ -14,6 +14,8 @@ def overhead(oled, interval):
     content = response.json()
     oled.fill(0)
 
+    current_year, current_month, current_day, current_hour, current_minute, current_seconds,  current_weekday, current_yearday = localtime()
+
     if (content['message'] == 'success'):
         line = 5
         column = 5
@@ -22,7 +24,7 @@ def overhead(oled, interval):
         for overhead in content['response']:
             ts = overhead['risetime']
             duration = overhead['duration']
-            year, month, day, hour, minute, seconds, epoc, other = localtime(ts)
+            year, month, day, hour, minute, seconds, weekday, yearday = localtime(ts)
             
             oled.text("{}/{} - {}:{}".format(day, month, hour, minute), column, line)
             oled.show()
@@ -36,6 +38,9 @@ def overhead(oled, interval):
                 line = 5
 
                 oled.fill(0)
+
+            if (current_day == day and current_hour == hour and current_minute == minute):
+                blink()
     else:
         oled.text("Invalid response.", 0, 0)
         oled.text("Check parameters.", 0, 10)
@@ -52,7 +57,7 @@ def get_location(oled):
         iss_latitude = iss_position['latitude']
         iss_longitude = iss_position['longitude']
         iss_timestamp = content['timestamp']
-        year, month, day, hour, minute, seconds, epoc, other = localtime(iss_timestamp)
+        year, month, day, hour, minute, seconds, weekday, yearday = localtime(iss_timestamp)
             
         oled.text("Lat: {}".format(iss_latitude), 0, 0)
         oled.text("Long: {}".format(iss_longitude), 0, 10)
