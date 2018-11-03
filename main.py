@@ -38,9 +38,11 @@ while True:
                 sleep(10)
 
                 line = 5
-                
+
                 oled.fill(0)
     else:
-        print("Invalid response from API, check parameters.")
+        oled.text("Invalid response.", 0, 0)
+        oled.text("Check parameters.", 0, 10)
+        oled.show()
     
     sleep(INTERVAL)
