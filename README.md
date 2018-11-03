@@ -5,6 +5,9 @@ Location using ESP8266 and [MicroPython](https://micropython.org/).
 
 This project is created to run on my Nodemcu Wifi Esp8266 with Oled Display 128x32, can't test in others devices.
 
+![Nodemcu Wifi Esp8266](assets/IMG_20181102_215430030.jpg)
+![Nodemcu Wifi Esp8266](assets/IMG_20181102_215435123.jpg)
+
 ## Software Install
 
 - Edit `boot.py` and update wifi credentials
